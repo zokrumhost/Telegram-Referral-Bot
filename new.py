@@ -563,7 +563,11 @@ class ReferralBot:
         print(f"👑 Admin User ID: {self.config['ADMIN_USER_ID']}")
         print("🚀 Waiting for messages and join requests...")
         
-        application.run_polling()
+        # ***************** YAHAN BADLAV KIYA HAI *******************
+        application.run_in_thread()  # Bot ko thread mein chalao
+        while True: 
+            time.sleep(100)  # Process ko chalu rakho
+        # ************************************************************
 
 def main():
     """Main function to start the bot"""
